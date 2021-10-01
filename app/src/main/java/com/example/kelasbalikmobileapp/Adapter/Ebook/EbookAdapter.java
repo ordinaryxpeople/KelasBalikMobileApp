@@ -58,7 +58,8 @@ public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull EbookAdapter.MyViewHolder holder, int position) {
         new DownloadImageFromInternet(holder.vivURLEbook).execute("https://admin.kelasbalik.id/assets/media/ebook/"+mEbookList.get(position).getGambar());
         String path="https://docs.google.com/viewer?url=admin.kelasbalik.id/assets/media/ebook/"+mEbookList.get(position).getUrl_ebook()+"&embedded=true";
-        //String path=mEbookList.get(position).getUrl_ebook();
+        String pdfpath="https://admin.kelasbalik.id/assets/media/ebook/"+mEbookList.get(position).getUrl_ebook();
+
         holder.tvJudulEbook.setText(mEbookList.get(position).getJudul());
         holder.tvDeskripsiEbook.setText(mEbookList.get(position).getDeskripsi());
         holder.tvURLPengunggahEbook.setText(mEbookList.get(position).getPengunggah());
@@ -67,7 +68,7 @@ public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.MyViewHolder
             public void onClick(View view) {
                 Intent intent = new Intent(context, ReadWebview.class);
                 intent.setType("text/plain");
-                intent.putExtra("url_pdf",path);
+                intent.putExtra("url_pdf",pdfpath);
                 context.startActivities(new Intent[]{intent});
             }
         });

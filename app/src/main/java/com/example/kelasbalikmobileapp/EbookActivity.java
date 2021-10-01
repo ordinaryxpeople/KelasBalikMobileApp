@@ -1,5 +1,7 @@
 package com.example.kelasbalikmobileapp;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +51,8 @@ public class EbookActivity extends AppCompatActivity {
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         ebookActivity=this;
 
+        refresh();
+
         etSearchEbook = findViewById(R.id.etSearchEbook);
         etSearchEbook.addTextChangedListener(new TextWatcher() {
             @Override
@@ -92,7 +96,11 @@ public class EbookActivity extends AppCompatActivity {
         callSearch.enqueue(new Callback<SearchEbook>() {
             @Override
             public void onResponse(Call<SearchEbook> call, Response<SearchEbook> response) {
-                Toast.makeText(EbookActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+                List<Ebook> EbookList = response.body().getListDataEbook();
+                Log.d("Retrofit Get", "Jumlah data Tugas: " +
+                        String.valueOf(EbookList.size()));
+                mAdapter = new EbookAdapter(EbookList);
+                mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
