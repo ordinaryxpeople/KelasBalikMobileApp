@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/drawable/bg_full_blue.xml" value="0.12604166666666666" />
+        <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/drawable/ic_home.xml" value="0.240625" />
+        <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/drawable/rounded_bg.xml" value="0.240625" />
         <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/activity_ebook.xml" value="0.33" />
-        <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/activity_read_webview.xml" value="0.1213768115942029" />
         <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/ebook_list.xml" value="0.25" />
         <entry key="..\:/KERJA/PROGRAMMING/KelasBalikMobileApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />

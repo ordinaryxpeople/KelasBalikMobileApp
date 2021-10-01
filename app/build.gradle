@@ -50,4 +50,10 @@ dependencies {
     implementation 'org.apache.commons:commons-collections4:4.1'
     implementation 'es.voghdev.pdfviewpager:library:1.1.2'
 
+    // shape
+    implementation 'io.github.florent37:shapeofview:1.4.7'
+
+    //custom plain text
+    implementation 'com.libizo:customedittext:1.0.6'
+
 }

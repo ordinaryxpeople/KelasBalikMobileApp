@@ -9,28 +9,59 @@
     tools:context=".EbookActivity"
     android:background="#6495ED">
 
-    <TextView
-        android:id="@+id/tvHeadingEbook"
+    <FrameLayout
+        android:id="@+id/flEbookAct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Ebook"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/tvHeadingEbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ebook"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivBackButtonEbook"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_back_button" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvSubheadingEbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kumpulan Ebook Untuk Dibaca Siswa"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/white" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvBGEbook"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="-50dp"
         app:cardCornerRadius="50dp"
-        app:contentPaddingBottom="100dp"
+        app:contentPaddingBottom="80dp"
         app:contentPaddingLeft="20dp"
         app:contentPaddingRight="20dp"
-        app:contentPaddingTop="50dp">
+        app:contentPaddingTop="40dp">
 
         <LinearLayout
             android:id="@+id/llCVBGEbook"
@@ -38,18 +69,33 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.libizo.CustomEditText
                 android:id="@+id/etSearchEbook"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Tuliskan Nama Ebook.."
-                android:inputType="textPersonName" />
+                android:layout_height="45dp"
+                android:hint="Cari Ebook.."
+                android:inputType="text"
+                app:libIZO_clearIconTint="#8f1f15"
+                app:libIZO_setBackgroundColor="#ECECEC"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setClearIconVisible="true"
+                app:libIZO_setCornerRadius="15dp"
+                app:libIZO_setPrefixTextColor="#FF4081"
+                app:libIZO_setStrokeWidth="0dp" />
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/etSearchEbook"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:ems="10"-->
+            <!--                android:hint="Tuliskan Nama Ebook.."-->
+            <!--                android:inputType="textPersonName" />-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvEbook"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

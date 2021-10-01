@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.kelasbalikmobileapp.Adapter.Ebook.EbookAdapter;
@@ -40,6 +42,7 @@ public class EbookActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     public static EbookActivity ebookActivity;
     EditText etSearchEbook;
+    ImageView imageViewBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,13 @@ public class EbookActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         ebookActivity=this;
+        imageViewBack = (ImageView) findViewById(R.id.ivBackButtonEbook);
+        imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         refresh();
 
